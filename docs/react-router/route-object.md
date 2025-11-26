@@ -46,9 +46,7 @@ function MyRouteComponent() {
   return (
     <div>
       <h1>Look ma!</h1>
-      <p>
-        I'm still using React Router after like 10 years.
-      </p>
+      <p>I'm still using React Router after like 10 years.</p>
     </div>
   );
 }
@@ -106,10 +104,7 @@ See also:
 Route loaders provide data to route components before they are rendered.
 
 ```tsx
-import {
-  useLoaderData,
-  createBrowserRouter,
-} from "react-router";
+import { useLoaderData, createBrowserRouter } from "react-router";
 
 createBrowserRouter([
   {
@@ -201,9 +196,7 @@ By defining this function, you opt out of the default behavior completely and ca
 ```tsx
 import type { ShouldRevalidateFunctionArgs } from "react-router";
 
-function shouldRevalidate(
-  arg: ShouldRevalidateFunctionArgs,
-) {
+function shouldRevalidate(arg: ShouldRevalidateFunctionArgs) {
   return true; // false
 }
 

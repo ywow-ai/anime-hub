@@ -63,10 +63,7 @@ function useQuizTimer() {
   let submit = useSubmit();
 
   let cb = useCallback(() => {
-    submit(
-      { quizTimedOut: true },
-      { action: "/end-quiz", method: "post" },
-    );
+    submit({ quizTimedOut: true }, { action: "/end-quiz", method: "post" });
   }, []);
 
   let tenMinutes = 10 * 60 * 1000;
@@ -90,9 +87,7 @@ function Task() {
   return (
     <fetcher.Form method="post" action="/update-task/123">
       <input type="text" name="title" />
-      <button type="submit">
-        {busy ? "Saving..." : "Save"}
-      </button>
+      <button type="submit">{busy ? "Saving..." : "Save"}</button>
     </fetcher.Form>
   );
 }
@@ -123,9 +118,7 @@ function Project() {
         <input type="text" name="title" />
         <button type="submit">Submit</button>
       </Form>
-      {actionData ? (
-        <p>{actionData.title} updated</p>
-      ) : null}
+      {actionData ? <p>{actionData.title} updated</p> : null}
     </div>
   );
 }

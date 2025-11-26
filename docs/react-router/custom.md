@@ -45,10 +45,7 @@ let router = createBrowserRouter([
 To render the router in the browser, use `<RouterProvider>`.
 
 ```tsx
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import { createRoot } from "react-dom/client";
 
 createRoot(document.getElementById("root")).render(
@@ -65,12 +62,9 @@ createBrowserRouter([
   {
     path: "/show/:showId",
     lazy: {
-      loader: async () =>
-        (await import("./show.loader.js")).loader,
-      action: async () =>
-        (await import("./show.action.js")).action,
-      Component: async () =>
-        (await import("./show.component.js")).Component,
+      loader: async () => (await import("./show.loader.js")).loader,
+      action: async () => (await import("./show.action.js")).action,
+      Component: async () => (await import("./show.component.js")).Component,
     },
   },
 ]);
@@ -147,10 +141,7 @@ export async function handler(request: Request) {
 
   // 3. Render everything with StaticRouterProvider
   let html = renderToString(
-    <StaticRouterProvider
-      router={router}
-      context={context}
-    />,
+    <StaticRouterProvider router={router} context={context} />,
   );
 
   // Setup headers from action and loaders from deepest match

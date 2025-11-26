@@ -18,9 +18,7 @@ function Root() {
   return <h1>Hello world</h1>;
 }
 
-const router = createBrowserRouter([
-  { path: "/", Component: Root },
-]);
+const router = createBrowserRouter([{ path: "/", Component: Root }]);
 ```
 
 Here is a larger sample route config:
@@ -59,10 +57,7 @@ createBrowserRouter([
 Route objects define the behavior of a route beyond just the path and component, like data loading and actions. We'll go into more detail in the [Route Object guide](./route-object), but here's a quick example of a loader.
 
 ```tsx filename=app/team.tsx
-import {
-  createBrowserRouter,
-  useLoaderData,
-} from "react-router";
+import { createBrowserRouter, useLoaderData } from "react-router";
 
 createBrowserRouter([
   {
